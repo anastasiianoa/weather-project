@@ -1,0 +1,112 @@
+body {
+  background: linear-gradient(
+    109.6deg,
+    rgb(238, 241, 241) 11.2%,
+    rgb(237, 246, 250) 100.2%
+  );
+}
+
+.container {
+  font-family: "Montserrat", sans-serif;
+  color: rgb(190, 190, 190);
+}
+
+.formation {
+  padding: 10px;
+  margin: 50px 183px;
+  background-image: url("../images/background4.jpg");
+}
+
+.head {
+  font-size: 60px;
+  color: whitesmoke;
+}
+
+.time-date {
+  margin-top: 6px;
+}
+
+.celsius,
+.fahrenheit {
+  font-size: 20px;
+}
+
+.celsius {
+  position: relative;
+  top: -25px;
+  font-weight: bold;
+}
+
+.slash {
+  font-size: 45px;
+}
+
+.fahrenheit {
+  font-weight: 400;
+}
+
+.search-form {
+  margin-top: 20px;
+}
+.main-pic {
+  color: yellow;
+  margin-top: 25px;
+  font-size: 200px;
+  line-height: normal;
+}
+
+.humidity,
+.wind {
+  position: relative;
+  top: 160px;
+}
+
+h2 {
+  font-size: 27px;
+  color: rgb(245, 245, 245);
+}
+
+h3 {
+  font-size: 10px;
+  margin: 0 auto;
+}
+
+hr.divider {
+  margin: 3px 0 16px 0;
+}
+
+h4 {
+  position: relative;
+  top: 34px;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
+#celsius-option {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+#fahrenheit-option {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.temperature-celsius {
+  font-weight: bold;
+}
+
+.location-button {
+  position: relative;
+  top: 1px;
+  color: rgb(229, 226, 226);
+}
+
+.location-button:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.weekday {
+  font-weight: bold;
+}

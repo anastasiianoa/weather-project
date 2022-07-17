@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/0d1abf8e2c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600&family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card text-center formation shadow p-3 mb-5 bg-body rounded">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-3 time-date" id="date-div">
+              18:00:00
+              <br />
+              19 June 2022
+              <br />
+              Sunday
+            </div>
+            <div class="col-6">
+              <h1 class="head">
+                <span id="number">26</span
+                ><span class="celsius"
+                  ><a href="#" id="celsius-option">°C</a></span
+                ><span class="slash">/</span
+                ><span class="fahrenheit"
+                  ><a href="#" id="fahrenheit-option">°F</a></span
+                >
+              </h1>
+            </div>
+            <div class="col-3">
+              <form class="search-form" id="search-form">
+                <input
+                  type="text"
+                  placeholder="Type a city..."
+                  class="form-control form-control-sm"
+                  id="search-input"
+                />
+
+                <input
+                  type="submit"
+                  value="Search"
+                  class="btn btn-outline-light"
+                  style="
+                    --bs-btn-padding-y: 0.1rem 0.2rem;
+                    --bs-btn-padding-x: 0.2rem;
+                    --bs-btn-font-size: 0.6rem;
+                  "
+                />
+                <i
+                  class="bi bi-geo-alt location-button"
+                  id="location-button"
+                ></i>
+              </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <div class="d-flex justify-content-center">
+                <div class="humidity">
+                  <span id="humidity-percent">2</span>%
+                  <div class="picture">
+                    <i class="fa-solid fa-droplet"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="d-flex justify-content-center">
+                <i class="bi bi-brightness-high main-pic"></i>
+              </div>
+            </div>
+            <div class="col-4">
+              <div class="d-flex justify-content-center">
+                <div class="wind">
+                  <span id="wind-speed">10</span>km/h
+                  <div class="picture">
+                    <i class="fa-solid fa-wind"></i>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <h2>Sunny</h2>
+          <br />
+          <h3>(A WEEK)</h3>
+          <hr class="divider" />
+          <div class="row">
+            <div class="col">
+              <h4>London <br />GB</h4>
+            </div>
+            <div class="col col-lg-2">
+              <span class="weekday"> mon</span> <br />
+              <i class="bi bi-brightness-high"></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div>
+            </div>
+            <div class="col col-lg-2">
+              <span class="weekday">tue</span>
+              <br />
+              <i class="bi bi-brightness-high"></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div>
+            </div>
+            <div class="col col-lg-2">
+              <span class="weekday"> wed</span> <br />
+              <i class="bi bi-brightness-high"></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div>
+            </div>
+            <div class="col col-lg-2">
+              <span class="weekday"> thu </span><br />
+              <i class="bi bi-brightness-high"></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div>
+            </div>
+            <div class="col col-lg-2">
+              <span class="weekday"> fri </span><br />
+              <i class="bi bi-brightness-high"></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="src/script.js"></script>
+  </body>
+</html>
