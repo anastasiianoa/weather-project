@@ -4,17 +4,21 @@ body {
     rgb(238, 241, 241) 11.2%,
     rgb(237, 246, 250) 100.2%
   );
-}
 
-.container {
   font-family: "Montserrat", sans-serif;
   color: rgb(190, 190, 190);
 }
 
-.formation {
-  padding: 10px;
-  margin: 50px 183px 0;
+.wrapper {
+  max-width: 900px;
+  margin: 30px auto;
+}
+.weather-app {
+  padding: 20px;
+  border: 1px solid gray;
+  border-radius: 5px;
   background-image: url("../images/background4.jpg");
+  text-align: center;
 }
 
 .head {
@@ -112,12 +116,7 @@ h4 {
 }
 
 .reference {
-  position: relative;
-  left: -300px;
-  top: 45px;
-  font-size: 14px;
-}
-
-.name {
-  color: black;
+  text-align: left;
+  margin: 0 auto;
+  color: #000000;
 }
