@@ -1,9 +1,21 @@
 let now = new Date();
 let dateDisplay = document.querySelector("#date-div");
-let time = now.getHours();
+let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let seconds = now.getSeconds();
+if (seconds < 10) {
+  seconds = `0${seconds}`;
+}
 let date = now.getDate();
+if (date < 10) {
+  date = `0${date}`;
+}
 let day = now.getDay();
 let days = [
   "Sunday",
@@ -32,7 +44,7 @@ let months = [
 ];
 month = months[now.getMonth()];
 let year = now.getFullYear();
-dateDisplay.innerHTML = `${time}:${minutes}:${seconds} 
+dateDisplay.innerHTML = `${hours}:${minutes}:${seconds} 
 <br /> 
 ${date} ${month} ${year}
 <br />
