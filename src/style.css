@@ -13,7 +13,7 @@ body {
 
 .formation {
   padding: 10px;
-  margin: 50px 183px;
+  margin: 50px 183px 0;
   background-image: url("../images/background4.jpg");
 }
 
@@ -109,4 +109,15 @@ h4 {
 
 .weekday {
   font-weight: bold;
+}
+
+.reference {
+  position: relative;
+  left: -300px;
+  top: 45px;
+  font-size: 14px;
+}
+
+.name {
+  color: black;
 }
