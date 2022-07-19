@@ -51,12 +51,10 @@ body {
 
 .search-form {
   margin-top: 20px;
+  margin-right: 20px;
 }
-.main-pic {
-  color: yellow;
-  margin-top: 25px;
-  font-size: 200px;
-  line-height: normal;
+.icon {
+  width: 100%;
 }
 
 .humidity,

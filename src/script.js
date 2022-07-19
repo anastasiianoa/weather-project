@@ -85,6 +85,10 @@ function showCityTemp(response) {
   document.querySelector("h2").innerHTML = response.data.weather[0].main;
   document.querySelector("h4").innerHTML = response.data.name;
   document.querySelector("#date-div").innerHTML = formatDate(response.data.dt * 1000);
+  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document
+    .querySelector("#icon")
+    .setAttribute("alt", response.data.weather[0].description);
 }
 
 function search(city) {
