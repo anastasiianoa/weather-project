@@ -1,54 +1,5 @@
-let now = new Date();
-let dateDisplay = document.querySelector("#date-div");
-let hours = now.getHours();
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = now.getMinutes();
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let seconds = now.getSeconds();
-if (seconds < 10) {
-  seconds = `0${seconds}`;
-}
-let date = now.getDate();
-if (date < 10) {
-  date = `0${date}`;
-}
-let day = now.getDay();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thusday",
-  "Friday",
-  "Saturday",
-];
-day = days[now.getDay()];
-let month = now.getMonth();
-let months = [
-  "January",
-  "Fabruary",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-month = months[now.getMonth()];
-let year = now.getFullYear();
-dateDisplay.innerHTML = `${hours}:${minutes}:${seconds} 
-<br /> 
-${date} ${month} ${year}
-<br />
-${day}`;
+
+
 
 function showCelsiusTemp(event) {
   event.preventDefault();
@@ -67,10 +18,61 @@ let fahrenheitTemp = document.querySelector("#fahrenheit-option");
 fahrenheitTemp.addEventListener("click", showFahrenheitTemp);
 
 
-
-
+function formatDate(timestamp) {
+  let now = new Date(timestamp);
+  let hours = now.getHours();
+  if (hours < 10) {
+  hours = `0${hours}`;
+  }
+  let minutes = now.getMinutes();
+  if (minutes < 10) {
+  minutes = `0${minutes}`;
+  }
+  let seconds = now.getSeconds();
+  if (seconds < 10) {
+  seconds = `0${seconds}`;
+  }
+  let date = now.getDate();
+  if (date < 10) {
+  date = `0${date}`;
+  }
+  let day = now.getDay();
+  let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thusday",
+  "Friday",
+  "Saturday",
+  ];
+  day = days[now.getDay()];
+  let month = now.getMonth();
+  let months = [
+  "January",
+  "Fabruary",
+  "March",
+  "April",
+  "May",
+  "June",
+  "July",
+  "August",
+  "September",
+  "October",
+  "November",
+  "December",
+  ];
+  month = months[now.getMonth()];
+  let year = now.getFullYear();
+  return `${hours}:${minutes}:${seconds} 
+  <br /> 
+  ${date} ${month} ${year}
+  <br />
+  ${day}`;
+}
 
 function showCityTemp(response) {
+  console.log(response);
   document.querySelector("#number").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -82,6 +84,7 @@ function showCityTemp(response) {
   );
   document.querySelector("h2").innerHTML = response.data.weather[0].main;
   document.querySelector("h4").innerHTML = response.data.name;
+  document.querySelector("#date-div").innerHTML = formatDate(response.data.dt * 1000);
 }
 
 function search(city) {
@@ -90,13 +93,11 @@ function search(city) {
   axios.get(apiUrl).then(showCityTemp);
 }
 
-function searchCity(event) {
+function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-input");
   search(cityInput.value);
 }
-
-search();
 
 function showPosition(position) {
   let latitude = position.coords.latitude;
@@ -110,8 +111,11 @@ function showCurrentLocationWeather() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
+search("London");
+
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#location-button");
 button.addEventListener("click", showCurrentLocationWeather);
+
