@@ -1,23 +1,3 @@
-
-
-
-function showCelsiusTemp(event) {
-  event.preventDefault();
-  let headingNumber = document.querySelector("#number");
-  headingNumber.innerHTML = 26;
-}
-let celsiusTemp = document.querySelector("#celsius-option");
-celsiusTemp.addEventListener("click", showCelsiusTemp);
-
-function showFahrenheitTemp(event) {
-  event.preventDefault();
-  let headingNumber = document.querySelector("#number");
-  headingNumber.innerHTML = 79;
-}
-let fahrenheitTemp = document.querySelector("#fahrenheit-option");
-fahrenheitTemp.addEventListener("click", showFahrenheitTemp);
-
-
 function formatDate(timestamp) {
   let now = new Date(timestamp);
   let hours = now.getHours();
@@ -72,10 +52,8 @@ function formatDate(timestamp) {
 }
 
 function showCityTemp(response) {
-  console.log(response);
-  document.querySelector("#number").innerHTML = Math.round(
-    response.data.main.temp
-  );
+  celsiusTemp = response.data.main.temp;
+  document.querySelector("#number").innerHTML = Math.round(celsiusTemp);
   document.querySelector("#wind-speed").innerHTML = Math.round(
     response.data.wind.speed
   );
@@ -115,7 +93,22 @@ function showCurrentLocationWeather() {
   navigator.geolocation.getCurrentPosition(showPosition);
 }
 
-search("London");
+function showFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheit = (celsiusTemp * 1.8) + 32;
+  document.querySelector("#number").innerHTML = Math.round(fahrenheit);
+  document.querySelector("#celsius-option").classList.remove("active");
+  document.querySelector("#fahrenheit-option").classList.add("active");
+}
+
+function showCelsiusTemp (event) {
+   event.preventDefault();
+   document.querySelector("#number").innerHTML = Math.round(celsiusTemp);
+   document.querySelector("#fahrenheit-option").classList.remove("active");
+   document.querySelector("#celsius-option").classList.add("active");
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
@@ -123,3 +116,9 @@ form.addEventListener("submit", handleSubmit);
 let button = document.querySelector("#location-button");
 button.addEventListener("click", showCurrentLocationWeather);
 
+document .querySelector("#fahrenheit-option").addEventListener("click", showFahrenheitTemp);
+document
+  .querySelector("#celsius-option")
+  .addEventListener("click", showCelsiusTemp);
+
+search("London"); 

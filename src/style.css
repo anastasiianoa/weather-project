@@ -9,6 +9,23 @@ body {
   color: rgb(190, 190, 190);
 }
 
+h2 {
+  font-size: 27px;
+  color: rgb(245, 245, 245);
+}
+
+h3 {
+  font-size: 10px;
+  margin: 0 auto;
+}
+
+h4 {
+  position: relative;
+  top: 34px;
+  color: whitesmoke;
+  font-size: 20px;
+}
+
 .wrapper {
   max-width: 900px;
   margin: 30px auto;
@@ -30,29 +47,33 @@ body {
   margin-top: 6px;
 }
 
-.celsius,
-.fahrenheit {
+#celsius-option,
+#fahrenheit-option {
+  text-decoration: none;
+  color: whitesmoke;
   font-size: 20px;
+  color: whitesmoke;
 }
 
-.celsius {
+#celsius-option {
   position: relative;
   top: -25px;
+}
+
+.active {
   font-weight: bold;
+  text-decoration: underline;
 }
 
 .slash {
   font-size: 45px;
 }
 
-.fahrenheit {
-  font-weight: 400;
-}
-
 .search-form {
   margin-top: 20px;
   margin-right: 20px;
 }
+
 .icon {
   width: 100%;
 }
@@ -63,35 +84,8 @@ body {
   top: 160px;
 }
 
-h2 {
-  font-size: 27px;
-  color: rgb(245, 245, 245);
-}
-
-h3 {
-  font-size: 10px;
-  margin: 0 auto;
-}
-
 hr.divider {
   margin: 3px 0 16px 0;
-}
-
-h4 {
-  position: relative;
-  top: 34px;
-  color: whitesmoke;
-  font-size: 20px;
-}
-
-#celsius-option {
-  text-decoration: none;
-  color: whitesmoke;
-}
-
-#fahrenheit-option {
-  text-decoration: none;
-  color: whitesmoke;
 }
 
 .temperature-celsius {
