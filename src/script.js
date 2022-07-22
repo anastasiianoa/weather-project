@@ -164,7 +164,9 @@ form.addEventListener("submit", handleSubmit);
 let button = document.querySelector("#location-button");
 button.addEventListener("click", showCurrentLocationWeather);
 
-document .querySelector("#fahrenheit-option").addEventListener("click", showFahrenheitTemp);
+document
+  .querySelector("#fahrenheit-option")
+  .addEventListener("click", showFahrenheitTemp);
 document.querySelector("#celsius-option").addEventListener("click", showCelsiusTemp);
 
 search("London");
