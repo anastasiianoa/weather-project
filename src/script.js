@@ -67,6 +67,8 @@ function showCityTemp(response) {
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
+
+    showForecast();
 }
 
 function search(city) {
@@ -106,6 +108,23 @@ function showCelsiusTemp (event) {
    document.querySelector("#number").innerHTML = Math.round(celsiusTemp);
    document.querySelector("#fahrenheit-option").classList.remove("active");
    document.querySelector("#celsius-option").classList.add("active");
+}
+
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  forecastHTML = forecastHTML + `<div class="col col-lg-2">
+              <span class="weekday"> mon</span> <br />
+              <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="40" /></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div></div>`;
+  forecastHTML = forecastHTML + `<div class="col col-lg-2">
+              <span class="weekday"> mon</span> <br />
+              <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="40" /></i>
+              <div class="temperature-celsius">26°</div>
+              <div class="temperature-fahrenheit">79°</div></div>`;
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
 }
 
 let celsiusTemp = null;
