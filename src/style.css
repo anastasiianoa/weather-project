@@ -20,6 +20,7 @@ h3 {
 
 h4 {
   position: relative;
+  left: -10px;
   top: 34px;
   color: whitesmoke;
   font-size: 20px;
@@ -111,4 +112,9 @@ hr.divider {
   text-align: left;
   margin: 0 auto;
   color: #000000;
+}
+
+#forecast {
+  position: relative;
+  top: -35px;
 }
