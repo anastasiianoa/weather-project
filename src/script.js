@@ -84,7 +84,9 @@ function showCityTemp(response) {
   document.querySelector("h2").innerHTML = response.data.weather[0].main;
   document.querySelector("h4").innerHTML = response.data.name;
   document.querySelector("#date-div").innerHTML = formatDate(response.data.dt * 1000);
-  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  document
+    .querySelector("#icon")
+    .setAttribute("src", `images/icons/${response.data.weather[0].icon}.svg`);
   document
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
@@ -141,9 +143,9 @@ function showForecast(response) {
         forecastHTML +
         `<div class="col col-lg-2">
               <span class="weekday">${formatDay(forecastDay.dt)}</span> <br />
-              <img src="http://openweathermap.org/img/wn/${
+              <img src="images/icons/${
                 forecastDay.weather[0].icon
-              }@2x.png" alt="" width="40" /></i>
+              }.svg" alt="" width="25" /></i>
               <div class="temperature-celsius">${Math.round(
                 forecastDay.temp.max
               )}°</div>
